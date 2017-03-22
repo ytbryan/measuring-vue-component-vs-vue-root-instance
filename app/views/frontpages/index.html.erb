@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %></p>
+
+<%= javascript_pack_tag 'hello_vue-4db418597165d0b8a751' %>
+<%= javascript_pack_tag 'hello_vue2-77d81c915c0be6129ac8' %>
+
+<h1>Frontpages</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @frontpages.each do |frontpage| %>
+      <tr>
+        <td><%= link_to 'Show', frontpage %></td>
+        <td><%= link_to 'Edit', edit_frontpage_path(frontpage) %></td>
+        <td><%= link_to 'Destroy', frontpage, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Frontpage', new_frontpage_path %>
